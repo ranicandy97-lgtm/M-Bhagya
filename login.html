@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Landing Login Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:#e8e2e2;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Main Blue Card */
+.container{
+    width:95%;
+    max-width:1000px;
+    background:#1f1aa9;
+    border-radius:20px;
+    padding:50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    color:white;
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* Left Section */
+.left{
+    width:48%;
+}
+
+.logo{
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.nav{
+    float:right;
+    font-size:14px;
+}
+
+.left h1{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.left p{
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.learn-btn{
+    padding:10px 20px;
+    background:#ff5c5c;
+    border:none;
+    border-radius:20px;
+    color:white;
+    cursor:pointer;
+}
+
+/* Right Sign In Card */
+.right{
+    width:45%;
+    background:white;
+    color:black;
+    padding:30px;
+    border-radius:25px;
+}
+
+.right h3{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:10px;
+    border:1px solid #ddd;
+    background:#f3f3f3;
+}
+
+.sign-btn{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:25px;
+    background:#1f1aa9;
+    color:white;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.google-btn{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(to right,#4facfe,#00f2fe);
+    color:white;
+    cursor:pointer;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .container{
+        flex-direction:column;
+        text-align:center;
+    }
+    .left, .right{
+        width:100%;
+        margin-bottom:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="left">
+        <div class="logo">Chandana Groups</div>
+
+        <h1>Generate Awesome<br>Web Pages</h1>
+
+        <p>
+        The most important part of the Startup is the samples.
+        The samples form a set of 25 usable pages you can use as is.
+        </p>
+
+        <button class="learn-btn">Learn More</button>
+    </div>
+
+    <div class="right">
+        <h3>Sign In Now</h3>
+
+        <input type="email" id="email" placeholder="Your Email">
+        <input type="password" id="password" placeholder="Your Password">
+
+        <button class="sign-btn" onclick="login()">Sign In</button>
+        <button class="google-btn">Login via Google</button>
+    </div>
+
+</div>
+
+<script>
+function login(){
+    let email=document.getElementById("email").value;
+    let password=document.getElementById("password").value;
+
+    if(email=="" || password==""){
+        alert("Please enter email and password");
+        return;
+    }
+
+    localStorage.setItem("userEmail",email);
+
+    // Redirect to CRUD page
+    window.location.href="crud.html";
+}
+</script>
+
+</body>
+</html>
